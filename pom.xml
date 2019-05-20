@@ -29,6 +29,7 @@
       <groupId>com.example</groupId>
       <artifactId>order-management</artifactId>
       <version>1.1-SNAPSHOT</version>
+      <scope>runtime</scope>
     </dependency>
     <!-- core dep -->
     <dependency>
