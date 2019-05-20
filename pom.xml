@@ -25,12 +25,12 @@
   </dependencyManagement>
   <dependencies>
     <!--order management process repo for data types-->
-    <dependency>
+    <!-- <dependency>
       <groupId>com.example</groupId>
       <artifactId>order-management</artifactId>
       <version>1.1-SNAPSHOT</version>
       <scope>runtime</scope>
-    </dependency>
+    </dependency> -->
     <!-- core dep -->
     <dependency>
       <groupId>org.kie</groupId>
@@ -40,6 +40,16 @@
     <dependency>
       <groupId>org.kie</groupId>
       <artifactId>kie-internal</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.kie</groupId>
+      <artifactId>kie-dmn-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.kie</groupId>
+      <artifactId>kie-dmn-feel</artifactId>
       <scope>provided</scope>
     </dependency>
     <!-- test -->
@@ -68,7 +78,7 @@
       <artifactId>drools-compiler</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
+    <!-- <dependency>
       <groupId>org.kie</groupId>
       <artifactId>kie-dmn-feel</artifactId>
       <scope>test</scope>
@@ -82,7 +92,7 @@
       <groupId>org.kie</groupId>
       <artifactId>kie-dmn-core</artifactId>
       <scope>test</scope>
-    </dependency>
+    </dependency> -->
   </dependencies>
   <build>
     <plugins>
@@ -91,6 +101,15 @@
         <artifactId>kie-maven-plugin</artifactId>
         <version>7.18.0.Final-redhat-00004</version>
         <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
       </plugin>
     </plugins>
   </build>
