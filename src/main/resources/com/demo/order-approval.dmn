@@ -20,8 +20,17 @@
     <dmn:itemComponent id="_9F8A71E9-D0B4-434C-909E-65B851F455F9" name="price" isCollection="false">
       <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_BE0B9B72-996F-40E0-95F8-0513D663BE34" name="supplier list" isCollection="true">
+    <dmn:itemComponent id="_BE0B9B72-996F-40E0-95F8-0513D663BE34" name="suppliers list" isCollection="true">
       <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_9DA96642-E07A-4DA3-ADED-1099266231C9" name="manager approval" isCollection="false">
+      <dmn:typeRef>boolean</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_A82E25D5-5159-4C36-85F3-72A1AB32001D" name="rejection reason" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_9718A646-1374-4CE4-B30F-41B1C61671E9" name="order id" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_6C3F3CAC-C994-4DEF-84FB-2E5D5C2DE980" name="Urgency" isCollection="false">
