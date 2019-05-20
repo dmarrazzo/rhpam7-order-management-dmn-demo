@@ -10,7 +10,7 @@ import org.kie.dmn.feel.lang.FEELType;
 @FEELType
 public class OrderInfo implements java.io.Serializable {
 
-	static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 123L;
 
 	private long orderId;
 	private java.lang.String item;
