@@ -110,12 +110,12 @@
             </ExpressionElement>
           </expressionElements>
           <expressionIdentifier>
-            <name>0|8</name>
+            <name>1560183067397</name>
             <type>EXPECT</type>
           </expressionIdentifier>
           <factIdentifier>
             <name>Approve</name>
-            <className>Approve</className>
+            <className>.Approve</className>
           </factIdentifier>
           <className>boolean</className>
           <factAlias>Approve</factAlias>
@@ -153,14 +153,14 @@
             <rawValue class="string">basic</rawValue>
           </FactMappingValue>
           <FactMappingValue>
-            <factIdentifier reference="../../../../../simulationDescriptor/factMappings/FactMapping[7]/factIdentifier"/>
-            <expressionIdentifier reference="../../../../../simulationDescriptor/factMappings/FactMapping[7]/expressionIdentifier"/>
-            <rawValue class="string">true</rawValue>
-          </FactMappingValue>
-          <FactMappingValue>
             <factIdentifier reference="../../../../../simulationDescriptor/factMappings/FactMapping/factIdentifier"/>
             <expressionIdentifier reference="../../../../../simulationDescriptor/factMappings/FactMapping/expressionIdentifier"/>
             <rawValue class="string">1</rawValue>
+          </FactMappingValue>
+          <FactMappingValue>
+            <factIdentifier reference="../../../../../simulationDescriptor/factMappings/FactMapping[7]/factIdentifier"/>
+            <expressionIdentifier reference="../../../../../simulationDescriptor/factMappings/FactMapping[7]/expressionIdentifier"/>
+            <rawValue class="string">true</rawValue>
           </FactMappingValue>
         </factMappingValues>
         <simulationDescriptor reference="../../../simulationDescriptor"/>
