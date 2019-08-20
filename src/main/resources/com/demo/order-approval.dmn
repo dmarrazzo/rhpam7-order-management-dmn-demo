@@ -45,8 +45,8 @@
       <dmn:text>"basic", "optional"</dmn:text>
     </dmn:allowedValues>
   </dmn:itemDefinition>
-  <dmn:businessKnowledgeModel id="_E33E3D45-6215-4419-80DA-FE79B086258A" name="Price Tollerance">
-    <dmn:variable id="_95D9EEC6-75F4-4899-9B3B-184B35E8E54C" name="Price Tollerance" typeRef="number"/>
+  <dmn:businessKnowledgeModel id="_E33E3D45-6215-4419-80DA-FE79B086258A" name="Price Tolerance">
+    <dmn:variable id="_95D9EEC6-75F4-4899-9B3B-184B35E8E54C" name="Price Tolerance" typeRef="number"/>
     <dmn:encapsulatedLogic id="_0A3E2E36-0EEA-4BE2-A515-ED622FCA922C" kind="FEEL">
       <dmn:formalParameter id="_AA5836DB-2EB6-4530-969C-27C537ADB54D" name="order information" typeRef="Order Information"/>
       <dmn:context id="_B055A816-8643-4E56-81AF-91EEFE51DB13">
@@ -155,7 +155,7 @@
       <dmn:requiredKnowledge href="#_E33E3D45-6215-4419-80DA-FE79B086258A"/>
     </dmn:knowledgeRequirement>
     <dmn:literalExpression id="_08F89143-D1BD-4641-BB53-3608F4B178CE">
-      <dmn:text>Order Information.price &lt; Price Tollerance(Order Information) * Order Information.target price</dmn:text>
+      <dmn:text>Order Information.price &lt; Price Tolerance(Order Information) * Order Information.target price</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:inputData id="_10CA8CAE-8DB7-402D-ABA5-203A1C00B84A" name="Order Information">
