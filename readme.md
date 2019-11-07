@@ -4,6 +4,7 @@ Order Management DMN
 Release
 -----------------------
 
+v7.5 aligned to Red Hat Decision Manager and Red Hat Process Automation Manager v 7.5
 v7.4.1 aligned to Red Hat Decision Manager and Red Hat Process Automation Manager v 7.4.1
 
 Description

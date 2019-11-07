@@ -46,6 +46,7 @@
     </dmn:allowedValues>
   </dmn:itemDefinition>
   <dmn:businessKnowledgeModel id="_E33E3D45-6215-4419-80DA-FE79B086258A" name="Price Tolerance">
+    <dmn:extensionElements/>
     <dmn:variable id="_95D9EEC6-75F4-4899-9B3B-184B35E8E54C" name="Price Tolerance" typeRef="number"/>
     <dmn:encapsulatedLogic id="_0A3E2E36-0EEA-4BE2-A515-ED622FCA922C" kind="FEEL">
       <dmn:formalParameter id="_AA5836DB-2EB6-4530-969C-27C537ADB54D" name="order information" typeRef="Order Information"/>
@@ -147,6 +148,7 @@
     </dmn:encapsulatedLogic>
   </dmn:businessKnowledgeModel>
   <dmn:decision id="_CB09A8DB-C8F9-46BE-B92B-429FC469AA9E" name="Approve">
+    <dmn:extensionElements/>
     <dmn:variable id="_3ABF973D-457B-4F63-AA30-C74FFBBF42E8" name="Approve" typeRef="boolean"/>
     <dmn:informationRequirement id="_707A3829-CDA8-4519-929A-8614584844D4">
       <dmn:requiredInput href="#_10CA8CAE-8DB7-402D-ABA5-203A1C00B84A"/>
@@ -159,6 +161,7 @@
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:inputData id="_10CA8CAE-8DB7-402D-ABA5-203A1C00B84A" name="Order Information">
+    <dmn:extensionElements/>
     <dmn:variable id="_781A48CB-1A35-4698-92EB-6A959F3D99C0" name="Order Information" typeRef="Order Information"/>
   </dmn:inputData>
   <dmndi:DMNDI>
@@ -183,6 +186,7 @@
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
           </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_0A3E2E36-0EEA-4BE2-A515-ED622FCA922C"/>
           <kie:ComponentWidths dmnElementRef="_08F89143-D1BD-4641-BB53-3608F4B178CE">
             <kie:width>832.0</kie:width>
           </kie:ComponentWidths>
