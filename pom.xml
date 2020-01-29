@@ -9,8 +9,8 @@
   <name>order-management-dmn</name>
   <description></description>
   <properties>
-    <ba.version>7.5.0.redhat-00004</ba.version>
-    <version.org.kie>7.26.0.Final-redhat-00005</version.org.kie>
+    <ba.version>7.6.0.redhat-00004</ba.version>
+    <version.org.kie>7.30.0.Final-redhat-00003</version.org.kie>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
