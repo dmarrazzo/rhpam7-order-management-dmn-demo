@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="http://www.redhat.com/dmn/demo/order-management-dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_77AD71DE-5E50-43F5-872F-022052D1B269" name="order-approval" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="http://www.redhat.com/dmn/demo/order-management-dmn">
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="http://www.redhat.com/dmn/demo/order-management-dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" id="_77AD71DE-5E50-43F5-872F-022052D1B269" name="order-approval" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="http://www.redhat.com/dmn/demo/order-management-dmn">
   <dmn:extensionElements/>
   <dmn:itemDefinition id="_7FBB05AF-5D9C-45EC-A9C9-633551FC21E2" name="Order Information" isCollection="false">
     <dmn:itemComponent id="_B51AD158-41D8-4A1A-A90F-40533ED538BE" name="item name" isCollection="false">
@@ -50,101 +49,85 @@
     <dmn:variable id="_95D9EEC6-75F4-4899-9B3B-184B35E8E54C" name="Price Tolerance" typeRef="number"/>
     <dmn:encapsulatedLogic id="_0A3E2E36-0EEA-4BE2-A515-ED622FCA922C" kind="FEEL">
       <dmn:formalParameter id="_AA5836DB-2EB6-4530-969C-27C537ADB54D" name="order information" typeRef="Order Information"/>
-      <dmn:context id="_B055A816-8643-4E56-81AF-91EEFE51DB13">
-        <dmn:contextEntry>
-          <dmn:variable id="_3D989BAF-2993-45A2-8A6E-577C72601F66" name="urgency" typeRef="string"/>
-          <dmn:literalExpression id="_27E2226F-C0F4-4EC3-B744-BD0EA041C6ED">
+      <dmn:decisionTable id="_BC793E39-5BE2-4005-8DC4-BB4CAFBB7146" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+        <dmn:input id="_4E96C4A6-408F-4647-AA0C-CF0A8D5610FC">
+          <dmn:inputExpression id="_EF8F90EC-4E37-42DB-AA4E-1047BFCD6D69" typeRef="Urgency">
             <dmn:text>order information.urgency</dmn:text>
-          </dmn:literalExpression>
-        </dmn:contextEntry>
-        <dmn:contextEntry>
-          <dmn:variable id="_3D1C76D0-D9C8-45C9-B057-D94489231FBC" name="category" typeRef="string"/>
-          <dmn:literalExpression id="_C3ADD374-05C1-4D9D-80D8-1AD3756349CB">
+          </dmn:inputExpression>
+        </dmn:input>
+        <dmn:input id="_B548D2A5-251C-4CCF-8736-FD35D74FDF4B">
+          <dmn:inputExpression id="_84D32752-63D2-40A1-9F3E-2E2C8AFE489E" typeRef="Category">
             <dmn:text>order information.category</dmn:text>
-          </dmn:literalExpression>
-        </dmn:contextEntry>
-        <dmn:contextEntry>
-          <dmn:decisionTable id="_BC793E39-5BE2-4005-8DC4-BB4CAFBB7146" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
-            <dmn:input id="_4E96C4A6-408F-4647-AA0C-CF0A8D5610FC">
-              <dmn:inputExpression id="_EF8F90EC-4E37-42DB-AA4E-1047BFCD6D69" typeRef="Urgency">
-                <dmn:text>urgency</dmn:text>
-              </dmn:inputExpression>
-            </dmn:input>
-            <dmn:input id="_B548D2A5-251C-4CCF-8736-FD35D74FDF4B">
-              <dmn:inputExpression id="_84D32752-63D2-40A1-9F3E-2E2C8AFE489E" typeRef="Category">
-                <dmn:text>category</dmn:text>
-              </dmn:inputExpression>
-            </dmn:input>
-            <dmn:output id="_A29DB878-A4E2-45E2-9277-1E35664B5E1D" typeRef="number"/>
-            <dmn:rule id="_FC268BEC-1055-42E0-9731-EE52FC4C7622">
-              <dmn:inputEntry id="_F3C6D806-7639-40DE-BF4A-599B9D8714B5">
-                <dmn:text>"low"</dmn:text>
-              </dmn:inputEntry>
-              <dmn:inputEntry id="_AB897C66-6AFE-428E-BA56-BF8CE877E22E">
-                <dmn:text>"optional"</dmn:text>
-              </dmn:inputEntry>
-              <dmn:outputEntry id="_B304A93B-A075-48E5-B8DB-D5DAA7F6AF59">
-                <dmn:text>1.1</dmn:text>
-              </dmn:outputEntry>
-            </dmn:rule>
-            <dmn:rule id="_5BB08823-B5C3-4BB7-99EE-D21B612E5A17">
-              <dmn:inputEntry id="_19C465B7-3FC1-4274-83AC-ECF185E9B253">
-                <dmn:text>"low"</dmn:text>
-              </dmn:inputEntry>
-              <dmn:inputEntry id="_8835788A-0E77-4B31-A9FB-FEDB123DAD82">
-                <dmn:text>"basic"</dmn:text>
-              </dmn:inputEntry>
-              <dmn:outputEntry id="_AD114566-2705-48E4-94A6-6DB0E1608A6B">
-                <dmn:text>1.15</dmn:text>
-              </dmn:outputEntry>
-            </dmn:rule>
-            <dmn:rule id="_0106AFE2-9D40-42D8-AA67-B51680673355">
-              <dmn:inputEntry id="_02FBE46B-D632-4D03-87D2-739A4EA5327D">
-                <dmn:text>"medium"</dmn:text>
-              </dmn:inputEntry>
-              <dmn:inputEntry id="_F3E2281E-6383-4A28-B372-915A90F53634">
-                <dmn:text>"optional"</dmn:text>
-              </dmn:inputEntry>
-              <dmn:outputEntry id="_BA2B6949-5BF8-4C1E-8AB1-FAFED4FFCAB0">
-                <dmn:text>1.12</dmn:text>
-              </dmn:outputEntry>
-            </dmn:rule>
-            <dmn:rule id="_A016EBFD-8AA7-49F4-887D-ADBF644224D7">
-              <dmn:inputEntry id="_911A8F29-6766-4091-A688-D5E835D3A17F">
-                <dmn:text>"medium"</dmn:text>
-              </dmn:inputEntry>
-              <dmn:inputEntry id="_A040B022-9058-40C9-8AB5-0619D895FF09">
-                <dmn:text>"basic"</dmn:text>
-              </dmn:inputEntry>
-              <dmn:outputEntry id="_C789167D-9782-42D3-BD68-00B17515C53E">
-                <dmn:text>1.18</dmn:text>
-              </dmn:outputEntry>
-            </dmn:rule>
-            <dmn:rule id="_6B437C7D-3231-4B33-9866-78ACBC3A1441">
-              <dmn:inputEntry id="_5AE66567-CD26-4A16-8296-8B30513EFB99">
-                <dmn:text>"high"</dmn:text>
-              </dmn:inputEntry>
-              <dmn:inputEntry id="_F10436CB-C7F2-4205-9D28-F212838B6C4A">
-                <dmn:text>"optional"</dmn:text>
-              </dmn:inputEntry>
-              <dmn:outputEntry id="_DDD2B55D-9F57-4443-8F2E-629638081C55">
-                <dmn:text>1.18</dmn:text>
-              </dmn:outputEntry>
-            </dmn:rule>
-            <dmn:rule id="_31DA568F-FF38-4A3B-9049-947E1226C3FA">
-              <dmn:inputEntry id="_C6ED02DB-E380-4417-9094-277769DC3832">
-                <dmn:text>"high"</dmn:text>
-              </dmn:inputEntry>
-              <dmn:inputEntry id="_D8FD09F3-DDF4-4443-BBA3-421F295C5AF6">
-                <dmn:text>"basic"</dmn:text>
-              </dmn:inputEntry>
-              <dmn:outputEntry id="_5931456D-1043-4895-B7DB-DCBBDDB28F38">
-                <dmn:text>1.25</dmn:text>
-              </dmn:outputEntry>
-            </dmn:rule>
-          </dmn:decisionTable>
-        </dmn:contextEntry>
-      </dmn:context>
+          </dmn:inputExpression>
+        </dmn:input>
+        <dmn:output id="_A29DB878-A4E2-45E2-9277-1E35664B5E1D" typeRef="number"/>
+        <dmn:rule id="_FC268BEC-1055-42E0-9731-EE52FC4C7622">
+          <dmn:inputEntry id="_F3C6D806-7639-40DE-BF4A-599B9D8714B5">
+            <dmn:text>"low"</dmn:text>
+          </dmn:inputEntry>
+          <dmn:inputEntry id="_AB897C66-6AFE-428E-BA56-BF8CE877E22E">
+            <dmn:text>"optional"</dmn:text>
+          </dmn:inputEntry>
+          <dmn:outputEntry id="_B304A93B-A075-48E5-B8DB-D5DAA7F6AF59">
+            <dmn:text>1.1</dmn:text>
+          </dmn:outputEntry>
+        </dmn:rule>
+        <dmn:rule id="_5BB08823-B5C3-4BB7-99EE-D21B612E5A17">
+          <dmn:inputEntry id="_19C465B7-3FC1-4274-83AC-ECF185E9B253">
+            <dmn:text>"low"</dmn:text>
+          </dmn:inputEntry>
+          <dmn:inputEntry id="_8835788A-0E77-4B31-A9FB-FEDB123DAD82">
+            <dmn:text>"basic"</dmn:text>
+          </dmn:inputEntry>
+          <dmn:outputEntry id="_AD114566-2705-48E4-94A6-6DB0E1608A6B">
+            <dmn:text>1.15</dmn:text>
+          </dmn:outputEntry>
+        </dmn:rule>
+        <dmn:rule id="_0106AFE2-9D40-42D8-AA67-B51680673355">
+          <dmn:inputEntry id="_02FBE46B-D632-4D03-87D2-739A4EA5327D">
+            <dmn:text>"medium"</dmn:text>
+          </dmn:inputEntry>
+          <dmn:inputEntry id="_F3E2281E-6383-4A28-B372-915A90F53634">
+            <dmn:text>"optional"</dmn:text>
+          </dmn:inputEntry>
+          <dmn:outputEntry id="_BA2B6949-5BF8-4C1E-8AB1-FAFED4FFCAB0">
+            <dmn:text>1.12</dmn:text>
+          </dmn:outputEntry>
+        </dmn:rule>
+        <dmn:rule id="_A016EBFD-8AA7-49F4-887D-ADBF644224D7">
+          <dmn:inputEntry id="_911A8F29-6766-4091-A688-D5E835D3A17F">
+            <dmn:text>"medium"</dmn:text>
+          </dmn:inputEntry>
+          <dmn:inputEntry id="_A040B022-9058-40C9-8AB5-0619D895FF09">
+            <dmn:text>"basic"</dmn:text>
+          </dmn:inputEntry>
+          <dmn:outputEntry id="_C789167D-9782-42D3-BD68-00B17515C53E">
+            <dmn:text>1.18</dmn:text>
+          </dmn:outputEntry>
+        </dmn:rule>
+        <dmn:rule id="_6B437C7D-3231-4B33-9866-78ACBC3A1441">
+          <dmn:inputEntry id="_5AE66567-CD26-4A16-8296-8B30513EFB99">
+            <dmn:text>"high"</dmn:text>
+          </dmn:inputEntry>
+          <dmn:inputEntry id="_F10436CB-C7F2-4205-9D28-F212838B6C4A">
+            <dmn:text>"optional"</dmn:text>
+          </dmn:inputEntry>
+          <dmn:outputEntry id="_DDD2B55D-9F57-4443-8F2E-629638081C55">
+            <dmn:text>1.18</dmn:text>
+          </dmn:outputEntry>
+        </dmn:rule>
+        <dmn:rule id="_31DA568F-FF38-4A3B-9049-947E1226C3FA">
+          <dmn:inputEntry id="_C6ED02DB-E380-4417-9094-277769DC3832">
+            <dmn:text>"high"</dmn:text>
+          </dmn:inputEntry>
+          <dmn:inputEntry id="_D8FD09F3-DDF4-4443-BBA3-421F295C5AF6">
+            <dmn:text>"basic"</dmn:text>
+          </dmn:inputEntry>
+          <dmn:outputEntry id="_5931456D-1043-4895-B7DB-DCBBDDB28F38">
+            <dmn:text>1.25</dmn:text>
+          </dmn:outputEntry>
+        </dmn:rule>
+      </dmn:decisionTable>
     </dmn:encapsulatedLogic>
   </dmn:businessKnowledgeModel>
   <dmn:decision id="_CB09A8DB-C8F9-46BE-B92B-429FC469AA9E" name="Approve">
@@ -168,27 +151,19 @@
     <dmndi:DMNDiagram>
       <di:extension>
         <kie:ComponentsWidthsExtension>
-          <kie:ComponentWidths dmnElementRef="_B055A816-8643-4E56-81AF-91EEFE51DB13">
-            <kie:width>50.0</kie:width>
-            <kie:width>100.0</kie:width>
-            <kie:width>470.0</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_27E2226F-C0F4-4EC3-B744-BD0EA041C6ED">
-            <kie:width>470.0</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_C3ADD374-05C1-4D9D-80D8-1AD3756349CB">
-            <kie:width>470.0</kie:width>
-          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_BC793E39-5BE2-4005-8DC4-BB4CAFBB7146">
-            <kie:width>50.0</kie:width>
-            <kie:width>100.0</kie:width>
-            <kie:width>100.0</kie:width>
-            <kie:width>100.0</kie:width>
-            <kie:width>100.0</kie:width>
+            <kie:width>50</kie:width>
+            <kie:width>191</kie:width>
+            <kie:width>194</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_0A3E2E36-0EEA-4BE2-A515-ED622FCA922C"/>
+          <kie:ComponentWidths dmnElementRef="_0A3E2E36-0EEA-4BE2-A515-ED622FCA922C">
+            <kie:width>50</kie:width>
+            <kie:width>655</kie:width>
+          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_08F89143-D1BD-4641-BB53-3608F4B178CE">
-            <kie:width>832.0</kie:width>
+            <kie:width>832</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
