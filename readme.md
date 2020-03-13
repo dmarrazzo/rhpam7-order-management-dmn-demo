@@ -46,9 +46,6 @@ Payload:
 {
     "model-namespace": "http://www.redhat.com/dmn/demo/order-management-dmn",
     "model-name": "order-approval",
-    "decision-name": [],
-    "decision-id": [],
-    "decision-service-name": null,
     "dmn-context": {
         "Order Information": {
             "orderId": 0,
