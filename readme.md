@@ -30,3 +30,37 @@ Open the test scenario `order-test` and press the play icon:
 In the first row change the target price to `900` and run again the test:
 
 - the first scenario fails because `1099` is not in tolerance range when the target price is `900`
+
+Call the REST endpoint
+-----------------------
+
+Command line:
+
+```sh
+curl -X POST "http://localhost:8080/kie-server/services/rest/server/containers/order-management-dmn_1.0.0-SNAPSHOT/dmn" -H "accept: application/xml" -H "content-type: application/json" -d "{ \"model-namespace\": \"http://www.redhat.com/dmn/demo/order-management-dmn\", \"model-name\": \"order-approval\", \"decision-name\": [], \"decision-id\": [], \"decision-service-name\": null, \"dmn-context\": { \"Order Information\": { \"orderId\": 0, \"item\": \"item\", \"category\": \"basic\", \"urgency\": \"low\", \"price\": 1000.0, \"manager approval\": false, \"rejection reason\": null, \"target price\": 1000.0, \"id\": null } }}"
+```
+
+Payload:
+
+```json
+{
+    "model-namespace": "http://www.redhat.com/dmn/demo/order-management-dmn",
+    "model-name": "order-approval",
+    "decision-name": [],
+    "decision-id": [],
+    "decision-service-name": null,
+    "dmn-context": {
+        "Order Information": {
+            "orderId": 0,
+            "item": "item",
+            "category": "basic",
+            "urgency": "low",
+            "price": 1000.0,
+            "manager approval": false,
+            "rejection reason": null,
+            "target price": 1000.0,
+            "id": null
+        }
+    }
+}
+```
